@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{B8220F0B-A69E-4E62-B6FC-9C4CBCC82AC8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FastCellExample</RootNamespace>
+    <AssemblyName>FastCellExample</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="FastCellExample.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TwinTechs\Example\FastCellSamplePage.xaml.cs">
+      <DependentUpon>FastCellSamplePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TwinTechs\Controls\FastCell.cs" />
+    <Compile Include="TwinTechs\Controls\FastImage.cs" />
+    <Compile Include="TwinTechs\Example\MediaItem.cs" />
+    <Compile Include="TwinTechs\Example\FastCellComplexSamplePage.xaml.cs">
+      <DependentUpon>FastCellComplexSamplePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TwinTechs\Example\DataProvider.cs" />
+    <Compile Include="TwinTechs\Example\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TwinTechs\Example\ViewCellSimple.xaml.cs">
+      <DependentUpon>ViewCellSimple.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TwinTechs\Example\Cells\ComplexFastCell.xaml.cs">
+      <DependentUpon>ComplexFastCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TwinTechs\Example\Cells\ComplexViewCell.xaml.cs">
+      <DependentUpon>ComplexViewCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TwinTechs\Example\Cells\SimpleFastCell.xaml.cs">
+      <DependentUpon>SimpleFastCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TwinTechs\Example\Cells\SimpleViewCell.xaml.cs">
+      <DependentUpon>SimpleViewCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TwinTechs\Example\ViewCellComplexSamplePage.xaml.cs">
+      <DependentUpon>ViewCellComplexSamplePage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.1.4.2.6359\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.4.2.6359\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TwinTechs\" />
+    <Folder Include="TwinTechs\Controls\" />
+    <Folder Include="TwinTechs\Example\" />
+    <Folder Include="TwinTechs\Example\Cells\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TwinTechs\Example\FastCellSamplePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TwinTechs\Example\FastCellComplexSamplePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TwinTechs\Example\About.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TwinTechs\Example\ViewCellSimple.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TwinTechs\Example\Cells\ComplexFastCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TwinTechs\Example\Cells\ComplexViewCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TwinTechs\Example\Cells\SimpleFastCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TwinTechs\Example\Cells\SimpleViewCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TwinTechs\Example\ViewCellComplexSamplePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.1.4.2.6359\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.1.4.2.6359\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.1.4.2.6359\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
