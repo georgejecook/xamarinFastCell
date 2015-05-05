@@ -13,19 +13,26 @@ namespace TwinTechs.Controls
 	{
 
 		UIView _view;
+		object _originalBindingContext;
 
-		public FastCell FastCell {
-			get;
-			set;
-		}
+		FastCell _fastCell;
 
 		public NativeCell (NSString cellId, FastCell fastCell) : base (UITableViewCellStyle.Default, cellId)
 		{
-			FastCell = fastCell;
-			fastCell.PrepareCell ();
+			_fastCell = fastCell;
+			_fastCell.PrepareCell ();
+			_originalBindingContext = fastCell.BindingContext;
 			var renderer = RendererFactory.GetRenderer (fastCell.View);
 			_view = renderer.NativeView;
 			ContentView.AddSubview (_view);
+		}
+
+		public void RecycleCell (FastCell newCell)
+		{
+			if (newCell == _fastCell) {
+				_fastCell.BindingContext = _originalBindingContext;
+			}
+			_fastCell.BindingContext = newCell.BindingContext;
 		}
 
 		CGSize _lastSize;
@@ -36,8 +43,7 @@ namespace TwinTechs.Controls
 			//TODO update sizes of the xamarin view
 			if (_lastSize.Equals (CGSize.Empty) || !_lastSize.Equals (Frame.Size)) {
 
-//				var layout = FastCell.Content;
-				var layout = FastCell.View as Layout<View>;
+				var layout = _fastCell.View as Layout<View>;
 				if (layout != null) {
 					layout.Layout (Frame.ToRectangle ());
 					layout.ForceLayout ();
@@ -66,8 +72,6 @@ namespace TwinTechs.Controls
 
 
 
-
-
 	public class FastCellRenderer : ViewCellRenderer
 	{
 		public FastCellRenderer ()
@@ -85,11 +89,12 @@ namespace TwinTechs.Controls
 			if (reusableCell == null) {
 				nativeCell = new NativeCell (cellId, viewCell);
 			} else {
-				nativeCell.FastCell.BindingContext = item.BindingContext;
+				nativeCell.RecycleCell (viewCell);
 			}
 
 			return nativeCell;
 		}
+
 	}
 }
 
