@@ -10,14 +10,14 @@ xmlns:controls="clr-namespace:TwinTechs.Controls;assembly=FastCellExample"
 		<Label x:Name="DescriptionLabel" Text="Description" TextColor="White" AbsoluteLayout.LayoutFlags="None" FontSize="Small" AbsoluteLayout.LayoutBounds="50,280,100,40"/>
 		<StackLayout Orientation="Horizontal">
 			<StackLayout AbsoluteLayout.LayoutFlags="WidthProportional" AbsoluteLayout.LayoutBounds="0,0,0.3,310">
-				<Label Text="FAST CELL" TextColor="White"  />
-				<Label Text="FAST CELL" TextColor="White" />
+				<Label Text="VIEW CELL" TextColor="White"  />
+				<Label Text="VIEW CELL" TextColor="White" />
 				<Button Text="touch me" />
 				<Entry Text="changeme" />
 			</StackLayout>
 			<StackLayout AbsoluteLayout.LayoutFlags="WidthProportional" AbsoluteLayout.LayoutBounds="0.3,0,0.3,310">
-				<Label Text="FAST CELL" TextColor="White"  />
-				<Label Text="FAST CELL" TextColor="White" />
+				<Label Text="VIEW CELL" TextColor="White"  />
+				<Label Text="VIEW CELL" TextColor="White" />
 				<Button Text="touch me" />
 				<Entry Text="changeme" />
 				<controls:FastImage x:Name="UserThumbnailView2" AbsoluteLayout.LayoutFlags="None" AbsoluteLayout.LayoutBounds="5,40,40,40" WidthRequest="40" HeightRequest="40"/>
@@ -25,8 +25,8 @@ xmlns:controls="clr-namespace:TwinTechs.Controls;assembly=FastCellExample"
 				<controls:FastImage x:Name="UserThumbnailView4" AbsoluteLayout.LayoutFlags="None" AbsoluteLayout.LayoutBounds="5,120,40,40" WidthRequest="40" HeightRequest="40"/>
 			</StackLayout>
 						<StackLayout AbsoluteLayout.LayoutFlags="WidthProportional" AbsoluteLayout.LayoutBounds="0.6,0,0.3,310">
-				<Label Text="FAST CELL" TextColor="White"  />
-				<Label Text="FAST CELL" TextColor="White" />
+				<Label Text="VIEW CELL" TextColor="White"  />
+				<Label Text="VIEW CELL" TextColor="White" />
 				<Button Text="touch me" />
 				<Entry Text="changeme" />
 				<controls:FastImage x:Name="UserThumbnailView5" AbsoluteLayout.LayoutFlags="None" AbsoluteLayout.LayoutBounds="5,40,40,40" WidthRequest="40" HeightRequest="40"/>
