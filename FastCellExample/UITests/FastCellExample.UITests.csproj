@@ -37,9 +37,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\iOS\FastCellExample.iOS.csproj">
-      <Project>{7DE4F739-DB4A-4336-8CDE-7F1B0EC6A5E2}</Project>
-      <Name>FastCellExample.iOS</Name>
+    <ProjectReference Include="..\Droid\FastCellExample.Droid.csproj">
+      <Project>{4193EBEA-52F3-4763-A623-C0BE3C8B3BFC}</Project>
+      <Name>FastCellExample.Droid</Name>
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>
     </ProjectReference>
