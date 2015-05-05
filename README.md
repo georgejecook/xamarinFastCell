@@ -14,6 +14,8 @@ The optimizaitons work by only initilaizing the xamarin cells for the actual cel
 
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/V3Djg3bZN1A/0.jpg)](http://youtu.be/V3Djg3bZN1A)
 
+And on android here :[http://youtu.be/6yzXOGG2Rm0](http://youtu.be/6yzXOGG2Rm0)
+
 
 ##How to use
 
