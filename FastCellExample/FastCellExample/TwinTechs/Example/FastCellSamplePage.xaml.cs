@@ -19,6 +19,12 @@ namespace TwinTechs.Example
 			DisplayAlert ("you selected an item", item.Name, "Ok");
 		}
 
+		protected override void OnDisappearing ()
+		{
+			base.OnDisappearing ();
+			AppHelper.FastCellCache.FlushAllCaches ();
+		}
+
 	}
 }
 

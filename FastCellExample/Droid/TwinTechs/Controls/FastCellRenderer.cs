@@ -81,43 +81,25 @@ namespace TwinTechs.Controls
 
 	public class FastCellRenderer : ViewCellRenderer
 	{
-		string cellId;
-
-		static Dictionary<Android.Views.View,Dictionary<Android.Views.View,FastCell>> _reusableFastCellsByViewByParent;
-
-		static Dictionary<Android.Views.View,FastCell> GetCellDictionary (ViewGroup parent)
-		{
-			if (_reusableFastCellsByViewByParent == null) {
-				_reusableFastCellsByViewByParent = new Dictionary<Android.Views.View, Dictionary<Android.Views.View, FastCell>> ();
-			}
-			if (!_reusableFastCellsByViewByParent.ContainsKey (parent)) {
-				_reusableFastCellsByViewByParent [parent] = new Dictionary<Android.Views.View, FastCell> ();
-			}
-			return _reusableFastCellsByViewByParent [parent];
-		}
-
-		int _cellId = 0;
-
 		//TODO add a lookup for the cells we piggy back of.
 		protected override Android.Views.View GetCellCore (Cell item, Android.Views.View convertView, Android.Views.ViewGroup parent, Android.Content.Context context)
 		{
-			var cellLookup = GetCellDictionary (parent);
+			var cellCache = FastCellCache.Instance.GetCellCache (parent);
 			var fastCell = item as FastCell;
 			Android.Views.View cellCore = convertView;
-			if (cellCore != null && cellLookup.ContainsKey (cellCore)) {
-				var reusedItem = cellLookup [cellCore];
-				reusedItem.BindingContext = fastCell.BindingContext;
+			if (cellCore != null && cellCache.IsCached (cellCore)) {
+				cellCache.RecycleCell (cellCore, fastCell);
 			} else {
 				if (!fastCell.IsInitialized) {
 					fastCell.PrepareCell ();
 				}
-				cellCore = base.GetCellCore (item, convertView, parent, context);
-				cellCore.Id = _cellId;
-				_cellId++;
-				cellLookup [cellCore] = fastCell;
+				cellCore = base.GetCellCore (fastCell, convertView, parent, context);
+				cellCache.CacheCell (fastCell, cellCore);
 			}
 			return cellCore;
 		}
+
+
 	}
 }
 

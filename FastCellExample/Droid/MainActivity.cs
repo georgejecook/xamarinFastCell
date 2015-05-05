@@ -7,6 +7,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using TwinTechs.Controls;
+using TwinTechs.Example;
 
 namespace FastCellExample.Droid
 {
@@ -16,6 +18,7 @@ namespace FastCellExample.Droid
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
+			AppHelper.FastCellCache = FastCellCache.Instance;
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
 
