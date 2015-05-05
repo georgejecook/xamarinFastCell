@@ -12,6 +12,11 @@ Currently xamarin forms creates a view cell for each item in a list, even though
 
 The optimizaitons work by only initilaizing the xamarin cells for the actual cells which are used. The code changes required to achieve this are minimial.
 
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/V3Djg3bZN1A/0.jpg)](http://youtu.be/V3Djg3bZN1A)
+
+
+##How to use
+
 ### Extend FastCell, and initialize your cellat the appropriate place
 Remove your expensive contstructor from your xaml page and replace with an implementation of the abstract method InitializeCell:
 
