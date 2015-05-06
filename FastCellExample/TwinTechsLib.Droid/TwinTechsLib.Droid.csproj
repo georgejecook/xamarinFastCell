@@ -84,10 +84,6 @@
     <Folder Include="TwinTechs\Droid\Controls\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FastCellExample\FastCellExample.csproj">
-      <Project>{B8220F0B-A69E-4E62-B6FC-9C4CBCC82AC8}</Project>
-      <Name>FastCellExample</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TwinTechsLib\TwinTechsLib.csproj">
       <Project>{7C5D7E33-C77E-475F-BE8B-359CD164A4E5}</Project>
       <Name>TwinTechsLib</Name>
