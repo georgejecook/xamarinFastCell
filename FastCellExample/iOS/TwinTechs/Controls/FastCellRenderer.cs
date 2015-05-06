@@ -31,8 +31,9 @@ namespace TwinTechs.Controls
 		{
 			if (newCell == _fastCell) {
 				_fastCell.BindingContext = _originalBindingContext;
+			} else {
+				_fastCell.BindingContext = newCell.BindingContext;
 			}
-			_fastCell.BindingContext = newCell.BindingContext;
 		}
 
 		CGSize _lastSize;
