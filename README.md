@@ -10,11 +10,13 @@ Currently xamarin forms creates a view cell for each item in a list, even though
 
 ## The solution
 
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/33ZeU1X2M2Y/0.jpg)](https://www.youtube.com/watch?v=33ZeU1X2M2Y)
+
 The optimizaitons work by only initilaizing the xamarin cells for the actual cells which are used. The code changes required to achieve this are minimial.
 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/V3Djg3bZN1A/0.jpg)](http://youtu.be/V3Djg3bZN1A)
+iOS example [http://youtu.be/V3Djg3bZN1A](http://youtu.be/V3Djg3bZN1A)
 
-And on android here :[http://youtu.be/6yzXOGG2Rm0](http://youtu.be/6yzXOGG2Rm0)
+And exanded android example here :[http://youtu.be/6yzXOGG2Rm0](http://youtu.be/6yzXOGG2Rm0)
 
 
 ##How to use
