@@ -58,6 +58,11 @@ Android is not implemented at all. I expect that the implementation would be tri
 ## Bonus - fastImage!
 Another major issue of slowness on xamarin is the downloading of images into cells. On iOS we use SDWebImage and other cool libraries to help with that. 
 
-This project also contains our FastImage wrapper, which will give you all the benefits of SDWebImage.
+This project also contains our FastImage wrapper, which will give you all the benefits of SDWebImage on iOS and the MonoDroidToolkit's ImageLoader on Android [https://github.com/jamesmontemagno/MonoDroidToolkit](https://github.com/jamesmontemagno/MonoDroidToolkit)
 
 	UserThumbnailView.ImageUrl = mediaItem.ImagePath ?? "";
+
+###Limitations
+I've been surprised to find that bindings work.
+
+However I can't find a way to get different sized rows working. I'm presuming that wont' be possible at this time. Hopefully Xamarin will adopt this idea (fix imo) into their framework sooner than later.
