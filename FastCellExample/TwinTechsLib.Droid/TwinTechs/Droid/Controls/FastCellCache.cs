@@ -6,7 +6,7 @@ using System.Reflection;
 using Xamarin.Forms;
 
 
-namespace TwinTechs.Controls
+namespace TwinTechs.Droid.Controls
 {
 	/// <summary>
 	/// Make this class available through your favourite IOC/service method

@@ -1,7 +1,7 @@
 ﻿using System;
 using MonoDroidToolkit.ImageLoader;
 
-namespace TwinTechs.Controls
+namespace TwinTechs.Droid.Controls
 {
 	/**
 	 * caches available image loaders.

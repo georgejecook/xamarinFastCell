@@ -1,28 +1,27 @@
 ﻿using System;
-using Xamarin.Forms.Platform.iOS;
-using UIKit;
-using SDWebImage;
-using Foundation;
-using TwinTechs.Controls;
 using Xamarin.Forms;
+using TwinTechs.Controls;
+using Xamarin.Forms.Platform.Android;
+using MonoDroidToolkit.ImageLoader;
+using TwinTechs.Droid.Controls;
+
 
 [assembly: ExportRenderer (typeof(FastImage), typeof(FastImageRenderer))]
-namespace TwinTechs.Controls
+namespace TwinTechs.Droid.Controls
 {
-	public class FastImageRenderer : ImageRenderer, IFastImageProvider
+	public class FastImageRenderer : ImageRenderer
 	{
-		public FastImageRenderer ()
-		{
-		}
+		ImageLoader _imageLoader;
 
 		protected override void OnElementChanged (ElementChangedEventArgs<Image> e)
 		{
 			base.OnElementChanged (e);
-//			if (e.OldElement != null) {
-//				((FastImage)e.OldElement).ImageProvider = null;
-//			}
+			//			if (e.OldElement != null) {
+			//				((FastImage)e.OldElement).ImageProvider = null;
+			//			}
 			if (e.NewElement != null) {
 				var fastImage = e.NewElement as FastImage;
+				_imageLoader = ImageLoaderCache.GetImageLoader (this);
 				SetImageUrl (fastImage.ImageUrl);
 			}
 		}
@@ -36,7 +35,6 @@ namespace TwinTechs.Controls
 			}
 		}
 
-		#region FastImageProvider implementation
 
 		public void SetImageUrl (string imageUrl)
 		{
@@ -44,16 +42,10 @@ namespace TwinTechs.Controls
 				return;
 			}
 			if (imageUrl != null) {
-				Control.SetImage (
-					url: new NSUrl (imageUrl), 
-					placeholder: UIImage.FromBundle ("placeholder.png")
-				);
-			} else {
-//				Control.Image = UIImage.FromBundle ("placeholder.png");
+				_imageLoader.DisplayImage (imageUrl, Control, -1);
+
 			}
 		}
-
-		#endregion
 	}
 }
 

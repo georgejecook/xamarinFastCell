@@ -25,6 +25,7 @@
     <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchI18n>
     </MtouchI18n>
+    <MtouchExtraArgs>-gcc_flags "-force_load /Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/Reveal.framework/Versions/A/Reveal -ObjC -framework QuartzCore -framework CFNetwork"</MtouchExtraArgs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>full</DebugType>
@@ -69,9 +70,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
-    <Reference Include="SDWebImage">
-      <HintPath>..\Components\sdwebimage-3.7.1.4\lib\ios-unified\SDWebImage.dll</HintPath>
-    </Reference>
     <Reference Include="Calabash">
       <HintPath>..\packages\Xamarin.TestCloud.Agent.0.14.1\lib\Xamarin.iOS10\Calabash.dll</HintPath>
     </Reference>
@@ -92,6 +90,14 @@
     <ProjectReference Include="..\FastCellExample\FastCellExample.csproj">
       <Project>{B8220F0B-A69E-4E62-B6FC-9C4CBCC82AC8}</Project>
       <Name>FastCellExample</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TwinTechsLib\TwinTechsLib.csproj">
+      <Project>{7C5D7E33-C77E-475F-BE8B-359CD164A4E5}</Project>
+      <Name>TwinTechsLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TwinTechsLib.iOS\TwinTechsLib.iOS.csproj">
+      <Project>{C0D2B64A-CBFC-42A2-B8A6-B8673976EE14}</Project>
+      <Name>TwinTechsLib.iOS</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -122,8 +128,6 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="TwinTechs\Controls\FastCellRenderer.cs" />
-    <Compile Include="TwinTechs\Controls\FastImageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="ITunesArtwork" />
@@ -131,12 +135,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.4.3.6358-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.4.3.6358-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
-  <ItemGroup>
-    <XamarinComponentReference Include="sdwebimage">
-      <Version>3.7.1.4</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
-  </ItemGroup>
   <ItemGroup>
     <Folder Include="TwinTechs\" />
     <Folder Include="TwinTechs\Controls\" />

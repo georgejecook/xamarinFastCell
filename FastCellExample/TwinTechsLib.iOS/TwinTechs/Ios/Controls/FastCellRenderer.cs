@@ -5,9 +5,10 @@ using Xamarin.Forms.Platform.iOS;
 using UIKit;
 using Foundation;
 using CoreGraphics;
+using TwinTechs.Ios.Controls;
 
 [assembly: ExportRenderer (typeof(FastCell), typeof(FastCellRenderer))]
-namespace TwinTechs.Controls
+namespace TwinTechs.Ios.Controls
 {
 	internal class NativeCell : UITableViewCell
 	{

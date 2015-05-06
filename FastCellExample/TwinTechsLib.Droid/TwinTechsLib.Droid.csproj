@@ -4,17 +4,15 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{4193EBEA-52F3-4763-A623-C0BE3C8B3BFC}</ProjectGuid>
+    <ProjectGuid>{F4FDDB8D-1DAD-4558-B62C-CDBD703F9B9D}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>FastCellExample.Droid</RootNamespace>
+    <RootNamespace>TwinTechsLib.Droid</RootNamespace>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
-    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
-    <AndroidApplication>True</AndroidApplication>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <AssemblyName>FastCellExample.Droid</AssemblyName>
+    <AssemblyName>TwinTechsLib.Droid</AssemblyName>
     <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -62,6 +60,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="TwinTechs\Droid\Controls\FastCellCache.cs" />
+    <Compile Include="TwinTechs\Droid\Controls\FastCellRenderer.cs" />
+    <Compile Include="TwinTechs\Droid\Controls\FastImageRenderer.cs" />
+    <Compile Include="TwinTechs\Droid\Controls\ImageLoaderCache.cs" />
+    <Compile Include="MonoDroidToolkit\ImageLoader\FileCache.cs" />
+    <Compile Include="MonoDroidToolkit\ImageLoader\ImageLoader.cs" />
+    <Compile Include="MonoDroidToolkit\ImageLoader\MemoryCache.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.1.4.3.6358-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.4.3.6358-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+  <ItemGroup>
+    <Folder Include="TwinTechs\" />
+    <Folder Include="TwinTechs\Droid\" />
+    <Folder Include="TwinTechs\Droid\Controls\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\FastCellExample\FastCellExample.csproj">
       <Project>{B8220F0B-A69E-4E62-B6FC-9C4CBCC82AC8}</Project>
       <Name>FastCellExample</Name>
@@ -70,34 +92,5 @@
       <Project>{7C5D7E33-C77E-475F-BE8B-359CD164A4E5}</Project>
       <Name>TwinTechsLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TwinTechsLib.Droid\TwinTechsLib.Droid.csproj">
-      <Project>{F4FDDB8D-1DAD-4558-B62C-CDBD703F9B9D}</Project>
-      <Name>TwinTechsLib.Droid</Name>
-    </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="MainActivity.cs" />
-    <Compile Include="Resources\Resource.designer.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AboutResources.txt" />
-    <None Include="Properties\AndroidManifest.xml" />
-    <None Include="Assets\AboutAssets.txt" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\layout\" />
-    <Folder Include="Resources\values\" />
-    <Folder Include="TwinTechs\" />
-    <Folder Include="TwinTechs\Controls\" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\icon.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
-  <Import Project="..\packages\Xamarin.Forms.1.4.3.6358-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.4.3.6358-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
 </Project>

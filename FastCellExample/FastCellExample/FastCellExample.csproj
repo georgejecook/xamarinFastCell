@@ -35,8 +35,6 @@
     <Compile Include="TwinTechs\Example\FastCellSamplePage.xaml.cs">
       <DependentUpon>FastCellSamplePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TwinTechs\Controls\FastCell.cs" />
-    <Compile Include="TwinTechs\Controls\FastImage.cs" />
     <Compile Include="TwinTechs\Example\MediaItem.cs" />
     <Compile Include="TwinTechs\Example\FastCellComplexSamplePage.xaml.cs">
       <DependentUpon>FastCellComplexSamplePage.xaml</DependentUpon>
@@ -63,14 +61,12 @@
     <Compile Include="TwinTechs\Example\ViewCellComplexSamplePage.xaml.cs">
       <DependentUpon>ViewCellComplexSamplePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TwinTechs\Controls\IFastCellCache.cs" />
     <Compile Include="TwinTechs\Example\AppHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.4.3.6358-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.4.3.6358-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <ItemGroup>
     <Folder Include="TwinTechs\" />
-    <Folder Include="TwinTechs\Controls\" />
     <Folder Include="TwinTechs\Example\" />
     <Folder Include="TwinTechs\Example\Cells\" />
   </ItemGroup>
@@ -116,5 +112,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TwinTechsLib\TwinTechsLib.csproj">
+      <Project>{7C5D7E33-C77E-475F-BE8B-359CD164A4E5}</Project>
+      <Name>TwinTechsLib</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

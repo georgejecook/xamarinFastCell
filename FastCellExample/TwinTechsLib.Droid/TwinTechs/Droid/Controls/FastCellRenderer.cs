@@ -1,7 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
 using TwinTechs.Controls;
-using TwinTechs.Controls;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Android.Views;
@@ -9,11 +8,12 @@ using Java.Util;
 using System.Collections.Generic;
 using System.Linq;
 using Android.Widget;
+using TwinTechs.Droid.Controls;
 
 [assembly: ExportRenderer (typeof(FastCell), typeof(FastCellRenderer))]
-namespace TwinTechs.Controls
+namespace TwinTechs.Droid.Controls
 {
-	internal class NativeCell : ViewGroup
+	internal sealed class NativeCell : ViewGroup
 	{
 	
 		public NativeCell (Android.Content.Context context, FastCell fastCell) : base (context)
