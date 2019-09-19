@@ -62,7 +62,7 @@ This project also contains our FastImage wrapper, which will give you all the be
 
 	UserThumbnailView.ImageUrl = mediaItem.ImagePath ?? "";
 
-###Limitations
+## Limitations
 I've been surprised to find that bindings work.
 
 However I can't find a way to get different sized rows working. I'm presuming that wont' be possible at this time. Hopefully Xamarin will adopt this idea (fix imo) into their framework sooner than later.
